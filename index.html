@@ -1,11 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ยินดีต้อนรับ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#071233;
+      --accent1:#7c3aed;
+      --accent2:#06b6d4;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #e6eef8;
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(124,58,237,0.12), transparent),
+                  radial-gradient(900px 400px at 90% 80%, rgba(6,182,212,0.08), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+
+    .card{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:48px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px) saturate(120%);
+    }
+
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter: blur(40px);
+      opacity:0.9;
+      mix-blend-mode:screen;
+      animation: float 8s ease-in-out infinite;
+    }
+    .orb.one{width:360px;height:360px;left:-80px;top:-60px;background:linear-gradient(135deg,var(--accent1),transparent)}
+    .orb.two{width:220px;height:220px;right:-60px;bottom:-40px;background:linear-gradient(135deg,var(--accent2),transparent);animation-duration:10s}
+
+    @keyframes float{
+      0%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-18px) scale(1.03)}
+      100%{transform:translateY(0) scale(1)}
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:36px;
+      align-items:center;
+    }
+
+    .hero{
+      padding-right:10px;
+    }
+    h1{
+      margin:0 0 12px 0;
+      font-size:48px;
+      line-height:1.02;
+      letter-spacing:-0.6px;
+      font-weight:800;
+      color:linear-gradient(90deg,#fff,#dbeafe);
+    }
+    .logo-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.4)
+    }
+    p.lead{
+      margin:0 0 22px 0;
+      color: #dbeeff;
+      opacity:0.95;
+      font-size:18px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .btn{
+      padding:12px 20px;border-radius:12px;font-weight:600;border:0;cursor:pointer;font-size:16px;backdrop-filter: blur(6px);
+    }
+    .btn-primary{
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#021025;
+      box-shadow:0 8px 30px rgba(124,58,237,0.18);
+    }
+    .btn-ghost{
+      background:transparent;color:#cfe8ff;border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.012));
+      border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .panel h3{margin:0 0 8px 0;font-size:18px}
+    .meta{font-size:14px;color:#bcd6f8;opacity:0.9}
+
+    .features{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+    .feature{display:flex;gap:12px;align-items:center}
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent1))}
+
+    footer{margin-top:22px;font-size:13px;color:#9fbbe6;opacity:0.8}
+
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:38px}
+      .card{padding:28px}
+    }
+  </style>
 </head>
 <body>
-    <h1>สวัสดีครับคุณครูกิ๊กสุดหล่อ</h1>
+  <div class="card" role="main">
+    <div class="orb one" aria-hidden></div>
+    <div class="orb two" aria-hidden></div>
+
+    <div class="grid">
+      <div class="hero">
+        <div class="logo-tag">
+          <div class="logo">นุ๊กกี้</div>
+          <div style="line-height:1">
+            <div style="font-size:13px;color:#cfe8ff;opacity:0.9">เว็บไซต์สวยๆ</div>
+            <div style="font-size:12px;color:#9fbbe6">สร้างด้วย HTML + CSS</div>
+          </div>
+        </div>
+
+        <h1>ยินดีต้อนรับ<br><span style="font-weight:600;color:#cfe8ff;opacity:0.95">สู่ประสบการณ์ที่น่าจดจำ</span></h1>
+
+        <p class="lead">นี่คือหน้าต้อนรับที่สะอาด เรียบหรู และตอบสนองได้ดี เหมาะสำหรับหน้า Landing, โปรไฟล์ หรือการประกาศพิเศษของคุณ</p>
+
+        <div class="actions">
+          <button class="btn btn-primary" onclick="welcomeAction()">เริ่มเลย</button>
+          <button class="btn btn-ghost" onclick="learnMore()">ดูรายละเอียด</button>
+        </div>
+
+        <footer>ออกแบบเพื่อความสวยงามและความเรียบง่าย — ปรับเปลี่ยนได้ตามต้องการ</footer>
+      </div>
+
+      <aside class="panel" aria-label="ข้อมูลเพิ่มเติม">
+        <h3>ฟีเจอร์เด่น</h3>
+        <div class="meta">สวย ทันสมัย และโหลดเร็ว</div>
+
+        <div class="features">
+          <div class="feature"><span class="dot"></span><div>พื้นหลังกราเดียนและกราฟิกนุ่มนวล</div></div>
+          <div class="feature"><span class="dot"></span><div>ออกแบบให้รองรับมือถือและคอมพิวเตอร์</div></div>
+          <div class="feature"><span class="dot"></span><div>ปุ่มเรียกใช้งาน (CTA) ที่ชัดเจน</div></div>
+        </div>
+
+        <div style="margin-top:16px;font-size:13px;color:#bcd6f8;opacity:0.95">ปรับแต่งง่าย: เปลี่ยนข้อความ สี หรือเพิ่มรูปภาพแล้วเปิดไฟล์ในเบราว์เซอร์</div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    function welcomeAction(){
+      alert('สวัสดี! ยินดีต้อนรับ — ลองปรับแต่งข้อความและปุ่มได้ตามต้องการ');
+    }
+    function learnMore(){
+      window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+    }
+  </script>
 </body>
 </html>
